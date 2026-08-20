@@ -1,0 +1,55 @@
+/* ======================== PHOTO SECTION ======================== */
+.photo-section {
+    padding: 6rem 0;
+    background: linear-gradient(180deg, var(--dark) 0%, var(--dark-light) 50%, var(--dark) 100%);
+}
+.photo-showcase { text-align: center; }
+.photo-frame { position: relative; display: inline-block; margin-bottom: 2rem; }
+.photo-frame-border {
+    width: 380px; max-width: 90vw;
+    aspect-ratio: 1;
+    border: 4px solid var(--primary);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 0 50px rgba(233, 30, 99, 0.4), var(--shadow-card);
+    position: relative;
+}
+.photo-placeholder {
+    width: 100%; height: 100%;
+    background: linear-gradient(135deg, rgba(233,30,99,0.1) 0%, rgba(255,64,129,0.05) 100%);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 0.5rem; color: var(--text-muted);
+}
+.photo-real {
+    width: 100%; height: 100%; object-fit: cover;
+    display: block;
+}
+.photo-hint { font-size: 0.75rem; color: rgba(255,255,255,0.3); }
+.photo-decorations { position: absolute; inset: -20px; pointer-events: none; }
+.photo-deco { position: absolute; font-size: 1.8rem; }
+.photo-deco.d1 { top: 0; left: 0; animation: floatHeart 4s ease-in-out infinite; }
+.photo-deco.d2 { top: 0; right: 0; animation: floatHeart 4s ease-in-out infinite 0.5s; }
+.photo-deco.d3 { bottom: 0; left: 0; animation: floatHeart 4s ease-in-out infinite 1s; }
+.photo-deco.d4 { bottom: 0; right: 0; animation: floatHeart 4s ease-in-out infinite 1.5s; }
+.photo-deco.d5 { top: 50%; left: -25px; animation: floatHeart 4s ease-in-out infinite 0.7s; }
+.photo-deco.d6 { top: 50%; right: -25px; animation: floatHeart 4s ease-in-out infinite 1.2s; }
+
+@keyframes floatHeart {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-10px) scale(1.1); }
+}
+
+.photo-caption { max-width: 650px; margin: 0 auto; }
+.photo-caption .script-text-big { display: block; margin-bottom: 1rem; }
+.photo-caption p { color: var(--text-muted); line-height: 1.8; }
+
+.photo-badge {
+    display: inline-block; margin-top: 1.5rem;
+    padding: 0.8rem 2rem;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 50px;
+    color: var(--accent);
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.1rem;
+}

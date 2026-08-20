@@ -1,0 +1,114 @@
+/* ======================== FINAL ======================== */
+.final-section {
+    padding: 6rem 0;
+    background: radial-gradient(ellipse at 50% 50%, var(--dark-light) 0%, var(--dark) 70%);
+    text-align: center;
+}
+.final-content { max-width: 800px; margin: 0 auto; }
+.final-hearts { font-size: 3rem; margin-bottom: 2rem; animation: heartbeat 1.5s ease-in-out infinite; }
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    25% { transform: scale(1.12); }
+    50% { transform: scale(1); }
+    75% { transform: scale(1.06); }
+}
+.final-title { font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 2rem; }
+.final-quote {
+    background: var(--card-bg); border: 1px solid var(--card-border);
+    border-radius: var(--radius); padding: 2.5rem;
+    margin-bottom: 3rem;
+}
+.final-quote .script-text-big {
+    font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+    color: var(--text); line-height: 1.9;
+}
+
+.big-anniversary {
+    display: inline-block; padding: 2.5rem 3.5rem;
+    background: linear-gradient(145deg, rgba(233,30,99,0.15) 0%, rgba(255,64,129,0.08) 100%);
+    border: 2px solid var(--primary); border-radius: var(--radius);
+    margin-bottom: 2.5rem;
+    box-shadow: var(--shadow-glow);
+    transition: all 0.3s;
+}
+.big-anniversary:hover { transform: scale(1.03); }
+.anniversary-icon { font-size: 3rem; margin-bottom: 1rem; }
+.anniversary-numbers { display: flex; align-items: center; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
+.anniversary-block { display: flex; flex-direction: column; align-items: center; }
+.anniversary-num {
+    font-size: 4.5rem; font-weight: 700;
+    background: var(--gradient);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.anniversary-label { font-size: 1.3rem; color: var(--text-muted); }
+.anniversary-and {
+    font-size: 2.5rem; color: var(--accent);
+    font-family: 'Dancing Script', cursive;
+}
+.anniversary-sub {
+    margin-top: 1rem; font-size: 1.2rem;
+    color: var(--accent); font-family: 'Dancing Script', cursive;
+}
+
+.confetti-btn {
+    background: var(--gradient); color: white;
+    border: none; border-radius: 50px;
+    padding: 1rem 2.5rem; font-size: 1.1rem;
+    font-weight: 600; cursor: pointer;
+    box-shadow: 0 8px 25px rgba(233, 30, 99, 0.4);
+    transition: all 0.3s; margin-bottom: 3rem;
+    animation: bounce 2s ease-in-out infinite;
+}
+.confetti-btn:hover { transform: scale(1.08); box-shadow: 0 12px 35px rgba(233, 30, 99, 0.6); }
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+
+.final-signature { margin-top: 1rem; }
+.final-signature .script-text { color: var(--text-muted); font-size: 1.2rem; }
+.final-name { margin: 0.8rem 0; }
+.final-date { color: var(--primary-light); font-size: 1rem; }
+.final-sig-hearts { font-size: 2rem; margin-top: 1rem; animation: pulse 2s ease-in-out infinite; }
+
+/* ======================== MY MAN SECTION ======================== */
+.my-man-section {
+    padding: 6rem 0;
+    background: linear-gradient(180deg, var(--dark) 0%, var(--dark-mid) 50%, var(--dark) 100%);
+    text-align: center;
+}
+.my-man-content {
+    max-width: 1000px; margin: 0 auto;
+    display: flex; flex-direction: column; gap: 3rem;
+}
+.my-man-photos {
+    display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;
+}
+.my-man-photo {
+    width: 200px; height: 200px;
+    border-radius: 50%; overflow: hidden;
+    border: 3px solid var(--primary);
+    box-shadow: 0 0 30px rgba(233, 30, 99, 0.4);
+    transition: all 0.4s;
+}
+.my-man-photo:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 50px rgba(233, 30, 99, 0.6);
+}
+.my-man-photo img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+}
+.my-man-text { max-width: 700px; margin: 0 auto; }
+.my-man-card {
+    background: linear-gradient(145deg, rgba(233,30,99,0.1) 0%, rgba(255,64,129,0.05) 100%);
+    border: 2px solid var(--primary);
+    border-radius: var(--radius); padding: 2.5rem;
+    text-align: left;
+}
+.my-man-card .script-text-big {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+.my-man-card p {
+    color: var(--text-muted); font-size: 1rem; line-height: 1.8;
+    margin-bottom: 1rem;
+}
