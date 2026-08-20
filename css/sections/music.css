@@ -1,0 +1,453 @@
+/* ======================== MUSIC BACKGROUND ======================== */
+
+/* Overlay inicial */
+.music-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.97);
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.music-overlay.hidden {
+    display: none !important;
+}
+
+.music-overlay-hearts {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    25% { transform: scale(1.15); }
+    50% { transform: scale(1); }
+    75% { transform: scale(1.08); }
+}
+
+.music-overlay-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    background: linear-gradient(135deg, #e91e63, #ff4081, #ff80ab);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+}
+
+.music-overlay-subtitle {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+}
+
+.music-start-btn {
+    background: linear-gradient(135deg, #e91e63, #ff4081);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 1.2rem 3rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 8px 30px rgba(233, 30, 99, 0.5);
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin: 0 auto;
+}
+
+.music-start-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 12px 40px rgba(233, 30, 99, 0.7);
+}
+
+.music-overlay-hint {
+    margin-top: 2rem;
+    padding: 1rem 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    border: 1px dashed rgba(255, 255, 255, 0.2);
+    max-width: 400px;
+}
+
+.music-overlay-hint p {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+.music-overlay-hint strong {
+    color: #ff80ab;
+}
+
+/* ======================== FLOATING PLAYER ======================== */
+.music-float-player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(13, 5, 8, 0.98);
+    border-top: 2px solid rgba(233, 30, 99, 0.4);
+    padding: 0.8rem 1rem;
+    z-index: 9999;
+    display: none;
+    animation: slideUp 0.5s ease-out;
+    box-shadow: 0 -5px 30px rgba(0, 0, 0, 0.5);
+}
+
+.music-float-player.active {
+    display: block;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+}
+
+.music-float-content {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.music-float-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.music-float-art {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, #e91e63, #ff4081);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.music-float-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.music-float-title {
+    font-weight: 600;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.music-float-artist {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.music-visualizer-mini {
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+    height: 25px;
+}
+
+.music-visualizer-mini .bar {
+    width: 3px;
+    background: #e91e63;
+    border-radius: 2px;
+    animation: miniPulse 0.6s ease-in-out infinite;
+}
+
+.music-visualizer-mini .bar:nth-child(1) { animation-delay: 0s; }
+.music-visualizer-mini .bar:nth-child(2) { animation-delay: 0.1s; }
+.music-visualizer-mini .bar:nth-child(3) { animation-delay: 0.2s; }
+.music-visualizer-mini .bar:nth-child(4) { animation-delay: 0.15s; }
+
+.music-visualizer-mini.paused .bar {
+    animation-play-state: paused;
+    height: 5px !important;
+}
+
+@keyframes miniPulse {
+    0%, 100% { height: 8px; }
+    50% { height: 22px; }
+}
+
+.music-float-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.music-float-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.3rem;
+    cursor: pointer;
+    padding: 0.3rem;
+    transition: transform 0.2s;
+}
+
+.music-float-btn:hover {
+    transform: scale(1.2);
+}
+
+.music-float-btn.play-btn {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, #e91e63, #ff4081);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgba(233, 30, 99, 0.4);
+}
+
+.music-float-progress {
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+}
+
+.music-float-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #e91e63, #ff4081);
+    width: 0%;
+    transition: width 0.3s;
+}
+
+.music-float-time {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 0.3rem;
+    font-family: 'Courier New', monospace;
+}
+
+.music-float-close {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.8rem;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.music-float-close:hover {
+    color: white;
+}
+
+/* ======================== LYRICS OVERLAY ======================== */
+.lyrics-overlay {
+    position: fixed;
+    bottom: 110px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 99999;
+    pointer-events: none;
+    text-align: center;
+    width: 92%;
+    max-width: 650px;
+    display: none;
+}
+
+.lyrics-overlay.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+}
+
+.lyric-line {
+    display: none;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    color: #fff;
+    padding: 0.8rem 2rem;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.9);
+    border: 2px solid rgba(233, 30, 99, 0.6);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(233, 30, 99, 0.4);
+    text-shadow: 0 0 15px rgba(233, 30, 99, 0.5);
+    max-width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    transition: all 0.4s ease;
+}
+
+.lyric-line.active {
+    display: block;
+    font-size: 2.2rem;
+    color: #ff80ab;
+    text-shadow: 0 0 30px rgba(233, 30, 99, 0.9);
+    box-shadow: 0 0 50px rgba(233, 30, 99, 0.5);
+    transform: scale(1.05);
+    border: 2.5px solid rgba(233, 30, 99, 0.8);
+    background: rgba(0, 0, 0, 0.95);
+    animation: fadeInLyric 0.4s ease forwards;
+}
+
+@keyframes fadeInLyric {
+    from { opacity: 0; transform: translateY(8px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1.03); }
+}
+
+@media (max-width: 480px) {
+    .lyric-line { font-size: 1.1rem; padding: 0.4rem 1rem; }
+    .lyric-line.active { font-size: 1.4rem; }
+    .lyrics-overlay { bottom: 100px; }
+}
+
+/* ======================== SECTIONS SYNC TIMELINE & ACTIVE HIGHLIGHTS ======================== */
+
+.music-sections-timeline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.8rem 0;
+    padding: 0.4rem 0.6rem;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 30px;
+    border: 1px solid rgba(233, 30, 99, 0.2);
+    overflow-x: auto;
+    gap: 8px;
+    scrollbar-width: none; /* Ocultar scrollbar */
+}
+
+.music-sections-timeline::-webkit-scrollbar {
+    display: none;
+}
+
+.timeline-segment {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1.5px solid rgba(255, 255, 255, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    flex-shrink: 0;
+}
+
+.timeline-segment:hover {
+    background: rgba(233, 30, 99, 0.2);
+    border-color: #ff4081;
+    transform: scale(1.15);
+    box-shadow: 0 0 10px rgba(233, 30, 99, 0.4);
+}
+
+.timeline-segment.active {
+    background: linear-gradient(135deg, #e91e63 0%, #ff4081 50%, #ff80ab 100%);
+    border-color: #ffffff;
+    transform: scale(1.25);
+    box-shadow: 0 0 15px rgba(233, 30, 99, 0.6);
+    z-index: 2;
+}
+
+/* Tooltip de sección activa o hover */
+.timeline-segment::after {
+    content: attr(data-name);
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%) translateY(5px);
+    background: rgba(13, 5, 8, 0.95);
+    color: #ff80ab;
+    border: 1px solid rgba(233, 30, 99, 0.3);
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-family: 'Montserrat', sans-serif;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+.timeline-segment:hover::after,
+.timeline-segment.active::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Botón de Autoscroll */
+.music-float-btn.autoscroll-btn {
+    width: 38px;
+    height: 38px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1.5px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    margin-left: 5px;
+}
+
+.music-float-btn.autoscroll-btn:hover {
+    transform: scale(1.1);
+    background: rgba(233, 30, 99, 0.15);
+    border-color: rgba(233, 30, 99, 0.4);
+}
+
+.music-float-btn.autoscroll-btn.active {
+    background: rgba(233, 30, 99, 0.25);
+    border-color: #ff4081;
+    color: #fff;
+    box-shadow: 0 0 12px rgba(233, 30, 99, 0.4);
+}
+
+/* Efecto de Sección Activa/Inactiva en la Página */
+body.music-active-mode .main-content > section {
+    opacity: 0.55;
+    transform: scale(0.99);
+    filter: grayscale(15%);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+body.music-active-mode .main-content > section.music-active-section {
+    opacity: 1;
+    transform: scale(1.005);
+    filter: grayscale(0%);
+    box-shadow: 0 15px 50px rgba(233, 30, 99, 0.25);
+    border-radius: 20px;
+    border: 1px solid rgba(233, 30, 99, 0.25);
+    z-index: 5;
+}
+
+@media (max-width: 768px) {
+    body.music-active-mode .main-content > section.music-active-section {
+        transform: scale(1.002);
+    }
+}

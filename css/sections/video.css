@@ -1,0 +1,42 @@
+/* ======================== VIDEO / ROMANTIC MESSAGE ======================== */
+.video-section {
+    padding: 6rem 0;
+    background: linear-gradient(180deg, var(--dark) 0%, var(--dark-light) 50%, var(--dark) 100%);
+}
+.video-wrapper { max-width: 800px; margin: 0 auto; }
+
+.romantic-message-box {
+    background: linear-gradient(145deg, rgba(233,30,99,0.1) 0%, rgba(255,64,129,0.05) 100%);
+    border: 2px solid var(--primary);
+    border-radius: var(--radius);
+    padding: 3rem 2.5rem;
+    text-align: center;
+    box-shadow: 0 0 50px rgba(233, 30, 99, 0.3);
+}
+.romantic-message-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    25% { transform: scale(1.15); }
+    50% { transform: scale(1); }
+    75% { transform: scale(1.08); }
+}
+.romantic-message {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin-bottom: 1.5rem;
+}
+.romantic-message-text {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.9;
+    margin-bottom: 1.2rem;
+}
+.romantic-message-hearts {
+    font-size: 1.3rem;
+    color: var(--accent);
+    margin-top: 1.5rem;
+    font-family: 'Dancing Script', cursive;
+}

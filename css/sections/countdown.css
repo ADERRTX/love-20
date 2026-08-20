@@ -1,0 +1,25 @@
+/* ======================== COUNTDOWN ======================== */
+.countdown-section {
+    padding: 6rem 0;
+    background: linear-gradient(180deg, var(--dark) 0%, var(--dark-light) 50%, var(--dark) 100%);
+    text-align: center;
+}
+.countdown-box {
+    max-width: 500px; margin: 0 auto;
+    background: linear-gradient(145deg, rgba(233,30,99,0.1) 0%, rgba(255,64,129,0.05) 100%);
+    border: 2px solid var(--primary);
+    border-radius: var(--radius); padding: 3rem 2rem;
+    box-shadow: 0 0 40px rgba(233, 30, 99, 0.3);
+}
+.countdown-hearts { font-size: 2rem; margin: 1rem 0; }
+.countdown-label { margin-bottom: 1.5rem; color: var(--accent); }
+.countdown-numbers { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.countdown-item { text-align: center; }
+.countdown-num {
+    display: block; font-size: 3.5rem; font-weight: 700;
+    background: var(--gradient);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.countdown-text { color: var(--text-muted); font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+.countdown-message { color: var(--accent); font-size: 1.1rem; }
