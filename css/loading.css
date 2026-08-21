@@ -26,6 +26,7 @@
     font-size: 5rem;
     animation: loadHeartPulse 1.5s ease-in-out infinite;
     filter: drop-shadow(0 0 30px rgba(233, 30, 99, 0.8));
+    margin-bottom: 2rem;
 }
 
 @keyframes loadHeartPulse {
@@ -35,24 +36,39 @@
     75% { transform: scale(1.1); }
 }
 
-.loading-hint {
+.loading-messages-container {
+    position: relative;
+    height: 120px;
+    width: 80%;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.loading-msg {
+    position: absolute;
     font-family: 'Dancing Script', cursive;
-    font-size: 1.3rem;
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
     color: #ff80ab;
-    text-shadow: 0 0 15px rgba(233, 30, 99, 0.5);
-    margin-top: 2rem;
-    animation: touchPulse 1.5s ease-in-out infinite;
-    transition: opacity 0.8s ease;
-}
-
-.loading-screen.started .loading-hint {
+    text-align: center;
     opacity: 0;
-    pointer-events: none;
+    transform: translateY(20px);
+    transition: all 0.8s ease;
+    text-shadow: 0 0 20px rgba(233, 30, 99, 0.5);
+    padding: 0 1rem;
+    width: 100%;
 }
 
-@keyframes touchPulse {
-    0%, 100% { opacity: 0.5; }
-    50% { opacity: 1; }
+.loading-msg.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.loading-msg.fade-out {
+    opacity: 0;
+    transform: translateY(-30px);
 }
 
 /* ======================== WELCOME SCREEN ======================== */

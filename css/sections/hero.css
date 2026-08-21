@@ -48,6 +48,8 @@
 @keyframes twinkle { 0%, 100% { opacity: 0.2; } 50% { opacity: 1; } }
 
 /* ======================== HERO ======================== */
+.hero-section .animate-on-scroll { transform: translateY(-40px) scale(0.95); }
+
 .hero-section {
     position: relative; min-height: 100vh;
     display: flex; align-items: center; justify-content: center;

@@ -1,4 +1,7 @@
 /* ======================== PERSONAL REASONS ======================== */
+.personal-reasons-section .animate-on-scroll { transform: rotate(-5deg) translateY(30px); }
+.personal-reasons-section .animate-on-scroll.visible { transform: rotate(0) translateY(0); }
+
 .personal-reasons-section {
     padding: 6rem 0;
     background: linear-gradient(180deg, var(--dark) 0%, var(--dark-mid) 50%, var(--dark) 100%);

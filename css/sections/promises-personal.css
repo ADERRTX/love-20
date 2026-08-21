@@ -1,0 +1,45 @@
+/* ======================== PROMESAS PERSONALES ======================== */
+.promises-list {
+    max-width: 700px;
+    margin: 3rem auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.promise-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(233, 30, 99, 0.15);
+    border-radius: 12px;
+    padding: 1.2rem 1.5rem;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+.promise-item.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.promise-item:hover {
+    background: rgba(233, 30, 99, 0.08);
+    border-color: rgba(233, 30, 99, 0.3);
+}
+
+.promise-check {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.promise-item p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.6;
+    margin: 0;
+}

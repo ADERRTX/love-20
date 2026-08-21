@@ -1,4 +1,7 @@
 /* ======================== PROMISES ======================== */
+.promise-section .animate-on-scroll { transform: translateY(60px); }
+.promise-section .animate-on-scroll.visible { transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1); }
+
 .promise-section {
     padding: 6rem 0;
     background: linear-gradient(180deg, var(--dark) 0%, var(--dark-light) 50%, var(--dark) 100%);

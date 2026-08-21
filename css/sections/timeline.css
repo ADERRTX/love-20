@@ -1,41 +1,63 @@
-/* ======================== TIMELINE ======================== */
-.timeline-section {
-    padding: 6rem 0;
-    background: linear-gradient(180deg, var(--dark) 0%, var(--dark-light) 50%, var(--dark) 100%);
+/* ======================== RAZONES POR LAS QUE TE AMO ======================== */
+.razones-section .animate-on-scroll { transform: perspective(600px) rotateY(20deg); }
+.razones-section .animate-on-scroll.visible { transform: perspective(600px) rotateY(0); }
+
+.razones-section {
+    padding: 6rem 2rem;
+    background: transparent;
 }
-.timeline { max-width: 900px; margin: 0 auto; position: relative; padding: 1rem 0; }
-.timeline-line {
-    position: absolute; left: 50%; transform: translateX(-50%);
-    width: 3px; height: 100%;
-    background: var(--gradient); border-radius: 3px;
+
+.razones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 3rem auto 0;
 }
-.timeline-item {
-    display: flex; margin-bottom: 3rem; position: relative;
+
+.razon-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(233, 30, 99, 0.15);
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: all 0.4s ease;
+    opacity: 0;
+    transform: translateY(30px);
 }
-.timeline-item.left { justify-content: flex-start; padding-right: 52%; }
-.timeline-item.right { justify-content: flex-end; padding-left: 52%; }
-.timeline-dot {
-    position: absolute; left: 50%; transform: translateX(-50%);
-    width: 55px; height: 55px;
-    background: var(--dark); border: 3px solid var(--primary);
-    border-radius: 50%; display: flex; align-items: center; justify-content: center;
-    font-size: 1.3rem; z-index: 2;
-    box-shadow: 0 0 25px rgba(233, 30, 99, 0.5);
-    transition: all 0.3s;
+
+.razon-card.animate-on-scroll.visible {
+    opacity: 1;
+    transform: perspective(600px) rotateY(0);
 }
-.timeline-dot:hover { transform: translateX(-50%) scale(1.15); }
-.timeline-content {
-    background: var(--card-bg); border: 1px solid var(--card-border);
-    border-radius: var(--radius); padding: 1.8rem;
-    backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
-}
-.timeline-content:hover {
+
+.razon-card:hover {
+    background: rgba(233, 30, 99, 0.08);
+    border-color: rgba(233, 30, 99, 0.35);
     transform: translateY(-5px);
-    box-shadow: var(--shadow-glow);
-    border-color: var(--primary);
+    box-shadow: 0 10px 30px rgba(233, 30, 99, 0.15);
 }
-.timeline-icon { font-size: 2.8rem; margin-bottom: 0.5rem; }
-.timeline-content h3 { font-size: 1.2rem; color: var(--accent); margin-bottom: 0.5rem; }
-.timeline-content p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0.5rem; line-height: 1.7; }
-.timeline-date { color: var(--primary-light); font-size: 0.85rem; font-weight: 600; }
+
+.razon-numero {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #e91e63, #ff80ab);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.8rem;
+}
+
+.razon-texto {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+    .razones-grid {
+        grid-template-columns: 1fr;
+    }
+}

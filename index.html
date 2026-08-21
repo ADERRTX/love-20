@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="css/sections/video.css">
     <link rel="stylesheet" href="css/sections/personal-reasons.css">
     <link rel="stylesheet" href="css/sections/countdown.css">
+    <link rel="stylesheet" href="css/sections/promises-personal.css">
+    <link rel="stylesheet" href="css/sections/tu-hombre.css">
     <link rel="stylesheet" href="css/sections/final.css">
     <link rel="stylesheet" href="css/sections/music.css">
     <link rel="stylesheet" href="css/loading.css">
@@ -31,7 +33,7 @@
     <!-- PANTALLA DE CARGA -->
     <div class="loading-screen" id="loadingScreen">
         <div class="loading-heart">💕</div>
-        <div class="loading-hint">Toca para iniciar</div>
+        <div class="loading-messages-container" id="loadingMessages"></div>
     </div>
 
     <!-- PANTALLA DE BIENVENIDA -->
@@ -165,7 +167,7 @@
                     </div>
                     <div class="photo-caption">
                         <p class="script-text-big">El día que todo comenzó</p>
-                        <p>Mirando esta foto, recuerdo lo jóvenes que éramos y lo mucho que hemos crecido juntos. Esta imagen representa el inicio de algo hermoso, el primer paso de un camino que nos llevó hasta aquí, a 2 años y 6 meses de amor incondicional.</p>
+                        <p>Mirando esta foto, recuerdo lo jóvenes que éramos y lo mucho que hemos crecido juntos. Esta imagen representa el inicio de algo hermoso, el primer paso de un camino que nos llevó hasta aquí, a 2 años y 8 meses de amor incondicional.</p>
                         <div class="photo-badge">💕 Juntos desde el principio 💕</div>
                     </div>
                 </div>
@@ -213,66 +215,51 @@
             </div>
         </section>
 
-        <!-- 4. NUESTRA HISTORIA -->
-        <section class="timeline-section" id="historia">
+        <!-- 4. RAZONES POR LAS QUE TE AMO -->
+        <section class="razones-section" id="historia">
             <div class="section-container">
-                <h2 class="section-title"><span class="title-icon">📖</span> Nuestra Historia de Amor <span class="title-icon">📖</span></h2>
-                <p class="section-subtitle script-text">Cada momento juntos es un capítulo hermoso</p>
-                <div class="timeline">
-                    <div class="timeline-line"></div>
-                    <div class="timeline-item left animate-on-scroll">
-                        <div class="timeline-dot">💕</div>
-                        <div class="timeline-content">
-                            <div class="timeline-icon">💑</div>
-                            <h3>El Encuentro</h3>
-                            <p>El día que nuestros ojos se encontraron, supe que eras tú. Desde ese momento, mi vida cobró un nuevo sentido.</p>
-                            <span class="timeline-date">20 de Febrero 2024</span>
-                        </div>
+                <h2 class="section-title"><span class="title-icon">💖</span> Razones por las que te amo <span class="title-icon">💖</span></h2>
+                <p class="section-subtitle script-text">Cada razón es una razón más para quedarme contigo</p>
+                <div class="razones-grid">
+                    <div class="razon-card animate-on-scroll">
+                        <div class="razon-numero">1</div>
+                        <div class="razon-texto">Tu sonrisa ilumina mis días más oscuros</div>
                     </div>
-                    <div class="timeline-item right animate-on-scroll">
-                        <div class="timeline-dot">🌹</div>
-                        <div class="timeline-content">
-                            <div class="timeline-icon">💋</div>
-                            <h3>El Primer Beso</h3>
-                            <p>El momento en que nuestros labios se tocaron. El mundo se detuvo y supe que quería besarte para siempre.</p>
-                            <span class="timeline-date">20 de Febrero 2024</span>
-                        </div>
+                    <div class="razon-card animate-on-scroll">
+                        <div class="razon-numero">2</div>
+                        <div class="razon-texto">Me haces reír cuando no tengo ganas</div>
                     </div>
-                    <div class="timeline-item left animate-on-scroll">
-                        <div class="timeline-dot">💖</div>
-                        <div class="timeline-content">
-                            <div class="timeline-icon">🏡</div>
-                            <h3>Creciendo Juntos</h3>
-                            <p>Aprendimos a querernos con defectos y virtudes. Nuestro amor se hizo más fuerte cada día.</p>
-                            <span class="timeline-date">2024</span>
-                        </div>
+                    <div class="razon-card animate-on-scroll">
+                        <div class="razon-numero">3</div>
+                        <div class="razon-texto">Eres la persona más fuerte que conozco</div>
                     </div>
-                    <div class="timeline-item right animate-on-scroll">
-                        <div class="timeline-dot">🎆</div>
-                        <div class="timeline-content">
-                            <div class="timeline-icon">🏆</div>
-                            <h3>Primer Aniversario</h3>
-                            <p>Celebramos un año juntos. Cada obstáculo superado nos hizo más fuertes como pareja.</p>
-                            <span class="timeline-date">Febrero 2025</span>
-                        </div>
+                    <div class="razon-card animate-on-scroll">
+                        <div class="razon-numero">4</div>
+                        <div class="razon-texto">A tu lado aprendí lo que es amar de verdad</div>
                     </div>
-                    <div class="timeline-item left animate-on-scroll">
-                        <div class="timeline-dot">✨</div>
-                        <div class="timeline-content">
-                            <div class="timeline-icon">🎯</div>
-                            <h3>Nuestros Sueños</h3>
-                            <p>Empezamos a planear nuestro futuro juntos. Soñar contigo es mi favorito.</p>
-                            <span class="timeline-date">2025 - 2026</span>
-                        </div>
+                    <div class="razon-card animate-on-scroll">
+                        <div class="razon-numero">5</div>
+                        <div class="razon-texto">Me apoyas en todo sin importar nada</div>
                     </div>
-                    <div class="timeline-item right animate-on-scroll">
-                        <div class="timeline-dot">💞</div>
-                        <div class="timeline-content">
-                            <div class="timeline-icon">💖</div>
-                            <h3>2 Años y 8 Meses</h3>
-                            <p>Mi amor por ti crece cada día. Gracias por ser mi todo. Te amo infinitamente.</p>
-                            <span class="timeline-date">20 de Agosto, 2026</span>
-                        </div>
+                    <div class="razon-card animate-on-scroll">
+                        <div class="razon-numero">6</div>
+                        <div class="razon-texto">Tu voz es lo que más extraño cuando no estás</div>
+                    </div>
+                    <div class="razon-card animate-on-scroll">
+                        <div class="razon-numero">7</div>
+                        <div class="razon-texto">Cada mensaje tuyo hace latir mi corazón</div>
+                    </div>
+                    <div class="razon-card animate-on-scroll">
+                        <div class="razon-numero">8</div>
+                        <div class="razon-texto">Eres mi razón para ser mejor cada día</div>
+                    </div>
+                    <div class="razon-card animate-on-scroll">
+                        <div class="razon-numero">9</div>
+                        <div class="razon-texto">La distancia no puede con lo que siento por ti</div>
+                    </div>
+                    <div class="razon-card animate-on-scroll">
+                        <div class="razon-numero">10</div>
+                        <div class="razon-texto">Contigo quiero todo: risas, planes y un futuro juntos</div>
                     </div>
                 </div>
             </div>
@@ -458,7 +445,7 @@
         <!-- 11. VIDEO -->
         <section class="video-section" id="video">
             <div class="section-container">
-                <h2 class="section-title"><span class="title-icon">🎬</span> Un Video Para Ti <span class="title-icon">🎬</span></h2>
+                <h2 class="section-title"><span class="title-icon">💌</span> Palabras Desde Mi Corazón <span class="title-icon">💌</span></h2>
                 <p class="section-subtitle script-text">Un mensaje desde el corazón</p>
                 <div class="video-wrapper animate-on-scroll">
                     <div class="romantic-message-box">
@@ -475,7 +462,7 @@
         <!-- 12. TU HOMBRE -->
         <section class="my-man-section" id="tu-hombre">
             <div class="section-container">
-                <h2 class="section-title"><span class="title-icon">💪</span> Tu Hombre, Adriano <span class="title-icon">💪</span></h2>
+                <h2 class="section-title"><span class="title-icon">💪</span> Tu Osito, Adriano <span class="title-icon">💪</span></h2>
                 <p class="section-subtitle script-text">El hombre que te ama y quiere estar en tu vida</p>
                 <div class="my-man-content">
                     <div class="my-man-photos">
@@ -515,7 +502,7 @@
                         <div class="anniversary-numbers">
                             <div class="anniversary-block"><span class="anniversary-num">2</span><span class="anniversary-label">Años</span></div>
                             <span class="anniversary-and">y</span>
-                            <div class="anniversary-block"><span class="anniversary-num">6</span><span class="anniversary-label">Meses</span></div>
+                            <div class="anniversary-block"><span class="anniversary-num">8</span><span class="anniversary-label">Meses</span></div>
                         </div>
                         <p class="anniversary-sub">de amor incondicional</p>
                     </div>
@@ -552,6 +539,7 @@
     <script src="js/sections/personal-reasons.js"></script>
     <script src="js/sections/countdown.js"></script>
     <script src="js/sections/video.js"></script>
+    <script src="js/sections/promises-personal.js"></script>
     <script src="js/sections/my-man.js"></script>
     <script src="js/sections/final.js"></script>
 </body>
